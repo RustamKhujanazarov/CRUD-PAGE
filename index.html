@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CRUD</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./style.css" />
+</head>
+      <body>
+        <header class="header">
+          
+          <h1 class="header__text">
+            CRUD PAGE
+          </h1>
+          
+        </header>
+        <main class="container">
+            <form id="form-create" class="form">
+                <label for="" class="label">Name:</label>
+                <input
+                    id="input-create"
+                    type="text"
+                    class="input"
+                    placeholder="Enter your name..."
+                    autocomplete="off"
+                />
+                <label for="" class="label">Surname:</label>
+                <input type="text" class="input" id="input-surname" placeholder="Enter surname..." autocomplete="off">
+                <label for="" class="label">Address:</label>
+                <input type="text" class="input" id="input-address" placeholder="Enter Address..." autocomplete="off">
+                <label for="" class="label">Phone number:</label>
+                <input type="number" class="input" id="input-phone" placeholder="Enter phone number..." autocomplete="off">
+            <!-- <span id="clearInput"><i class="fa-solid fa-xmark"></i></span> -->
+            <button class="btn form__button">Add</button>
+
+            <input type="text" id="input-search" onkeyup="search()" placeholder="Search..." title="Type in a name">
+
+            </form>
+    
+            <div id="list-group-todo" class="list-group">
+                <table>
+                  <tr style="background-color: #999;">
+                    <th class="name">Name</th>
+                    <th class="surname">Surname</th>
+                    <th class="address">Address</th>
+                    <th class="phone-number">Phone number</th>
+                    <th style="width: 5%"></th>
+                    <th style="width: 5%"></th>
+                  </tr>
+                </table>
+                <table id="table" data-current-page="1">
+    
+                </table>
+            </div>
+
+            <div class="bottom">
+                <div class="pagination-container">
+                  <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </button>
+            
+                  <div id="pagination-numbers">
+              
+                  </div>
+              
+                  <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+
+                <div class="all__clean" id="allClear">All clear</div>
+            </div>
+              
+
+
+    
+          <div id="modal" class="modal-todo hidden">
+            <div class="card">
+              <div
+                class="card-header"
+              >
+                <h5>Change This CRUD</h5>
+                <i id="close" class="fas fa-times" src="img/close.svg" alt="" width="25" height="25"></i>
+              </div>
+              <div class="card-body">
+                <form id="form-edit" class="modal__form">
+                    <label for="" class="label">Name:</label>
+                    <input
+                      id="input-edit-name"
+                      type="text"
+                      placeholder="Enter name..."
+                      autocomplete="off"
+                    />
+                    <label for="" class="label">Surname:</label>
+                    <input
+                      id="input-edit-surname"
+                      type="text"
+                      placeholder="Enter surname..."
+                      autocomplete="off"
+                      
+                    />
+                    <label for="" class="label">Address:</label>
+                    <input
+                      id="input-edit-address"
+                      type="text"
+                      placeholder="Enter address..."
+                      autocomplete="off"
+                    />
+                    <label for="" class="label">Phone number:</label>
+                    <input
+                      id="input-edit-phone"
+                      type="number"
+                      placeholder="Enter phone number..."
+                      autocomplete="off"
+                    />
+                    <span id="message-edit" class="text-danger"></span>
+                  <button class="modal__btn">
+                    Save
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+    
+        <div id="overlay" class="overlay hidden"></div>
+    
+       <script src="http://pagination.js.org"></script>
+        <script src="http://pagination.js.org"></script>
+        <script src="./index.js"></script>
+      </body>
+    
+</html>
