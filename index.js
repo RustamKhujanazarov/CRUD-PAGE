@@ -60,11 +60,14 @@ formCreate.addEventListener('submit', (e) => {
     crud.push({ name:name, surname:surname, address:address, phoneNumber:phoneNumber})
     setCrud()
     showCrud()
-    if(crud.length=11, crud.length=9){
+    if(crud.length=11){
       location.reload()
     }
-    
-  } else {
+   } 
+    else if(crud.length=10){
+      location.reload()
+    }
+  else {
     alert("Please, Fill in the details completely...")
   }
 })
